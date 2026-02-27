@@ -1,0 +1,13 @@
+,Value
+Initial Matrix,MIYATA
+Optimized Matrix,MIYATA_EVO
+Initial Score,3.565837
+Final Score,4.577906
+Improvement,1.012069
+Improvement (%),28.38
+Generations,625
+Population Size,1000
+Mutation Rate,0.1
+Mutation Amplitude,0.1
+Crossover Probability,0.5
+Early Stop Patience,100

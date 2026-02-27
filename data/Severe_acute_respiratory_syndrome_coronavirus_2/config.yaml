@@ -1,0 +1,35 @@
+# Configuration for SARS-CoV-2 analysis
+# K-mer Significance Score (KSS) parameters
+
+dataset:
+  name: "Severe_acute_respiratory_syndrome_coronavirus_2"
+  description: "SARS-CoV-2 genome analysis"
+  genes: ["ORF1ab", "S", "N", "M", "E"]
+
+parameters:
+  # K-mer size for analysis
+  k: 9
+
+  # Minimum number of sequences per class (threshold filtering)
+  threshold: 25
+
+  # Component weights for final KSS score
+  weights:
+    discriminative: 1
+    mutational: 1
+    protein: 1
+
+  # Scoring parameters
+  scoring:
+    mutational_matrix: "MIYATA_EVO"
+    substitution_matrix: "BLOSUM62"
+    indel_score: 1.0              # Score for insertions/deletions (0.0 to 1.0)
+
+  # Sequence alignment parameters
+  alignment:
+    open_gap_score: -10
+    extend_gap_score: -1
+
+  # Output options
+  output:
+    save_raw: true      # Save raw results before compilation

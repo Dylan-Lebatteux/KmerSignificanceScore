@@ -1,0 +1,35 @@
+# Configuration for Human betaherpesvirus 5 (CMV) analysis
+# K-mer Significance Score (KSS) parameters
+
+dataset:
+  name: "Human_betaherpesvirus_5"
+  description: "Cytomegalovirus (CMV) genome analysis"
+  genes: ["UL55", "UL73", "US28"]
+
+parameters:
+  # K-mer size for analysis
+  k: 9
+
+  # Minimum number of sequences per class (threshold filtering)
+  threshold: 25
+
+  # Component weights for final KSS score
+  weights:
+    discriminative: 1
+    mutational: 1
+    protein: 1
+
+  # Scoring parameters
+  scoring:
+    mutational_matrix: "MIYATA_EVO"
+    substitution_matrix: "BLOSUM62"
+    indel_score: 1.0              # Score for insertions/deletions (0.0 to 1.0)
+
+  # Sequence alignment parameters
+  alignment:
+    open_gap_score: -10
+    extend_gap_score: -1
+
+  # Output options
+  output:
+    save_raw: true      # Save raw results before compilation
